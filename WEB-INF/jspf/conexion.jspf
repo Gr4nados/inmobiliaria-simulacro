@@ -1,0 +1,44 @@
+<%--
+ conexion.jspf - Fragmento de conexion a la base de datos MySQL
+ Proyecto: InmobiliariaWeb (Programacion Web con Java - Simulacro)
+ Se incluye de forma ESTATICA en cada pagina que necesite la base de datos:
+ <%@ include file="/WEB-INF/jspf/conexion.jspf" %>
+--%>
+<%@ page import="java.sql.*" %>
+<%!
+    /* ============ PARAMETROS DE CONEXION ============
+       Solo hay que modificar estas cuatro constantes para llevar el
+       proyecto a otro computador o a otro servidor. */
+    public static final String DB_DRIVER = "com.mysql.cj.jdbc.Driver";
+    public static final String DB_URL =
+        "jdbc:mysql://127.0.0.1:3306/inmobiliaria_simulacro"
+        + "?useSSL=false&allowPublicKeyRetrieval=true"
+        + "&serverTimezone=America/Bogota&characterEncoding=UTF-8";
+    public static final String DB_USUARIO = "root";
+    public static final String DB_CLAVE = "soyadmin12345";
+
+    public Connection abrirConexion() throws SQLException {
+        try {
+            Class.forName(DB_DRIVER);
+        } catch (ClassNotFoundException ex) {
+            throw new SQLException(
+                "No se encontro el driver de MySQL. Verifique que el .jar "
+                + "este en WEB-INF/lib del proyecto.", ex);
+        }
+        return DriverManager.getConnection(DB_URL, DB_USUARIO, DB_CLAVE);
+    }
+
+    public void cerrar(AutoCloseable... recursos) {
+        for (int i = recursos.length - 1; i >= 0; i--) {
+            if (recursos[i] != null) {
+                try { recursos[i].close(); } catch (Exception ignorada) { }
+            }
+        }
+    }
+
+    public void deshacer(Connection con) {
+        if (con != null) {
+            try { con.rollback(); } catch (SQLException ignorada) { }
+        }
+    }
+%>
