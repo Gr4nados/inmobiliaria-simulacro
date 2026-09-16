@@ -1,0 +1,105 @@
+/* ============================================================
+   estilos.css - Identidad visual propia sobre Bootstrap 5
+   ============================================================ */
+
+:root {
+    --inmo-amarillo: #F5A623;
+    --inmo-oscuro: #1F2937;
+    --inmo-gris: #6B7280;
+}
+
+body {
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    background-color: #F7F8FA;
+}
+
+/* ---------- Navbar ---------- */
+.navbar-brand {
+    letter-spacing: .3px;
+}
+.navbar-brand i {
+    color: var(--inmo-amarillo);
+    margin-right: 6px;
+}
+.navbar.bg-dark {
+    background-color: var(--inmo-oscuro) !important;
+}
+
+/* ---------- Botones ---------- */
+.btn-warning {
+    background-color: var(--inmo-amarillo);
+    border-color: var(--inmo-amarillo);
+    color: #1a1a1a;
+    font-weight: 600;
+}
+.btn-warning:hover {
+    background-color: #e0951a;
+    border-color: #e0951a;
+}
+.btn, .form-control, .form-select {
+    border-radius: .5rem;
+}
+
+/* ---------- Tarjetas (propiedades, paneles, formularios) ---------- */
+.card {
+    border: none;
+    border-radius: .75rem;
+    transition: transform .18s ease-in-out, box-shadow .18s ease-in-out;
+}
+.card.shadow-sm {
+    box-shadow: 0 2px 8px rgba(0,0,0,.06) !important;
+}
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 .75rem 1.5rem rgba(0,0,0,.12) !important;
+}
+/* Las tarjetas de formularios (login/registro) no necesitan el efecto de "levantar" */
+.card:has(form):hover {
+    transform: none;
+}
+
+/* ---------- Badges de estado ---------- */
+.badge {
+    letter-spacing: .4px;
+    font-weight: 600;
+    padding: .45em .7em;
+}
+
+/* ---------- Imagenes de propiedades ---------- */
+.card-img-top, .carousel-item img {
+    border-radius: .75rem .75rem 0 0;
+}
+.carousel-item img {
+    border-radius: .5rem;
+}
+
+/* ---------- Formularios: foco con el color de marca ---------- */
+.form-control:focus, .form-select:focus {
+    border-color: var(--inmo-amarillo);
+    box-shadow: 0 0 0 .2rem rgba(245, 166, 35, .25);
+}
+
+/* ---------- Landing: hero de bienvenida ---------- */
+.bg-dark.rounded-3 {
+    background: linear-gradient(135deg, var(--inmo-oscuro) 0%, #111827 100%) !important;
+}
+
+/* ---------- Tablas ---------- */
+.table thead.table-dark {
+    background-color: var(--inmo-oscuro);
+}
+.table-hover tbody tr:hover {
+    background-color: rgba(245, 166, 35, .06);
+}
+
+/* ---------- Footer ---------- */
+footer.border-top {
+    border-top-color: #E5E7EB !important;
+    color: var(--inmo-gris);
+}
+
+/* ---------- Impresion de una confirmacion de cita o solicitud ---------- */
+@media print {
+    nav, footer, .no-imprimir { display: none !important; }
+    .card { border: none !important; box-shadow: none !important; }
+}

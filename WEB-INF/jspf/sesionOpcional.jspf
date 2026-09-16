@@ -1,0 +1,12 @@
+<%--
+ sesionOpcional.jspf - Lee los datos de sesion SIN redirigir si no existe.
+ Se usa en paginas publicas (landing, catalogo) donde tanto un visitante
+ como un usuario logueado pueden entrar.
+--%>
+<%
+    Integer idUsuarioSesion = (Integer) session.getAttribute("idUsuario");
+    String rolSesion = (String) session.getAttribute("rol");
+    String nombreSesion = (String) session.getAttribute("nombre");
+    String ctx = request.getContextPath();
+    if (rolSesion == null) { rolSesion = "VISITANTE"; }
+%>
