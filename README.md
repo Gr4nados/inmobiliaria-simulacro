@@ -13,7 +13,7 @@ Una aplicación JSP + JSPF + JDBC + MySQL 8 + Bootstrap 5 (sin Servlets ni DAO, 
 Modelo 1) que permite a una inmobiliaria publicar propiedades, y a los clientes buscarlas,
 marcarlas como favoritas, agendar citas y radicar solicitudes de compra/arriendo.
 
-📄 **[Ver el documento final completo](<4.%20Documento%20Final/Documento%20final.pdf>)** —
+📄 **[Ver el documento final completo](<4.%20Documento%20final/Documento%20final.pdf>)** —
 arquitectura, modelo de datos, cada módulo explicado con su código, las 5 consultas
 obligatorias, metodología Scrum, pruebas unitarias y evidencia de funcionamiento.
 
@@ -42,7 +42,7 @@ obligatorias, metodología Scrum, pruebas unitarias y evidencia de funcionamient
 1. Capturas/          Evidencia de funcionamiento (todas las pruebas realizadas)
 2. Documentacion/      Script SQL, MER, diccionario de datos, casos de uso
 3. Pruebas/            Pruebas unitarias (Java plano, no se despliega en Tomcat)
-4. Documento Final/    Documento completo del proyecto
+4. Documento final/    Documento completo del proyecto
 5. Scrum/              Product backlog y los 3 sprints (Planning/Review/Retrospective)
 WEB-INF/               Configuración, fragmentos .jspf y driver JDBC
 admin/ cita/ solicitud/ propiedad/   Módulos de la aplicación
